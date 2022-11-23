@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -36,3 +37,13 @@
     transform: rotate(360deg);
   }
 }
+
+.ImgCard{
+  width:500px;
+}
+
+.CardStock{
+  width: 35rem;
+  border: 2px solid black;
+}
+
