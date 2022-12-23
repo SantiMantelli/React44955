@@ -12,20 +12,12 @@ const { category } = useParams();
 const [products, setProducts] = useState([]);
 
 useEffect(() => {
-    new Promise((resolve) =>
-    setTimeout(() => {
-        resolve(item);
-    }, 2000)
-    ).then((data) => {
     if (category) {
-        const categories = data.filter(
-        (product) => product.category === category
-        );
+        const categories = item.filter(product => product.category === category);
         setProducts(categories);
     } else {
-        setProducts(data);
+        setProducts(item);
     }
-    });
 }, [category]);
 
 if (products.length === 0) {
@@ -34,20 +26,9 @@ if (products.length === 0) {
 
 return (
     <div className="h-full">
-    <ItemList products={products} />
+        <ItemList products={products} />
     </div>
 );
 };
 
 export default ItemListContainer;
-
-
-/* function ItemListContainer ({name, contacto}){
-    return(
-
-        <div className="alert alert-info" role="alert">
-            <h2>{`Hola, ${name}! Contactate al: ${contacto}`}</h2>
-        </div>
-
-);
-} */

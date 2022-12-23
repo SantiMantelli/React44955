@@ -5,19 +5,15 @@ import { item as itemData } from "../data/item.data";
 
 const ItemDetailContainer = () => {
     const { id } = useParams ();
-const [item, setItem] = useState(null);
+    const [item, setItem] = useState(null);
 
 useEffect(() => {
-    new Promise((resolve) => setTimeout(() => resolve(itemData), 2000)).then(
-    (data) => {
-        if (id) {
-        const ids = data.find((product) => product.id === id);
+    if (id) {
+        const ids = itemData.find((product) => product.id === id);
         setItem(ids);
-        } else {
-        setItem(data);
-        }
+    } else {
+        setItem(itemData);
     }
-    );
 }, [id]);
 
 if (!item) {

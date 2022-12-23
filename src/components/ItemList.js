@@ -2,11 +2,13 @@ import Item from "./Item";
 
 const ItemList = ({ products }) => {
 return (
-    <ul className="flex items-center justify-center gap-4">
-    {products.map((product) => (
-        <Item product={product} />
-    ))}
-    </ul>
+    <div className="container">
+        <div className="row mt-4">
+            {products.map((product) => (
+                <Item product={product} key={product.id} />
+            ))}
+        </div>
+    </div>
 );
 };
 
